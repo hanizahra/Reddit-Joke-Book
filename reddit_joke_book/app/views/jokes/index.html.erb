@@ -1,0 +1,26 @@
+<h1>Jokes#index</h1>
+
+<%= render 'myheader' %>
+
+<% @jokes.each do |joke| %>
+  <span>
+    <%= joke['author'] %> - 
+    <i><%= joke['body'] %></i>
+  </span><br>
+  <%= link_to 'Remove Joke', joke, method: :delete %><br>
+  <%= link_to 'View/Edit Joke', joke, method: :get %><br>
+
+  <hr>
+<% end %>
+
+<%= form_for :joke, method: 'post', url: {action: 'create'} do |f| %>
+  <%= label(:joke,:author) %>
+  <%= f.text_field :author %><br>
+  <%= label(:joke,:body) %>
+  <%= f.text_field :body %><br>
+  <%= f.submit "Save this joke..." %>
+<% end %>
+
+<br><br>
+
+<%= link_to 'Get a random knock knock joke', :controller => :jokes, :action => :get_rand %>
