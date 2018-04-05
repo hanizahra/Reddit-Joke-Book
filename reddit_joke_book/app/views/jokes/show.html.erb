@@ -1,2 +1,11 @@
-<h1>Jokes#show</h1>
-<p>Find me in app/views/jokes/show.html.erb</p>
+<h1>The Joke</h1>
+<h2><%= @joke['author'] %></h2>
+<h3><%= @joke['body'] %></h3>
+
+<%= form_for :joke, method: 'patch', url: {action: 'update'} do |x| %>
+	<%= label(:joke, :author) %>
+	<%= x.text_field :author %><br>
+	<%= label(:joke, :body) %>
+	<%= x.text_field :body %><br>
+	<%= x.submit "Confirm Edits" %>
+<% end %>

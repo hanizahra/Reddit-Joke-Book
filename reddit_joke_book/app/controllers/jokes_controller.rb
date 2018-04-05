@@ -13,7 +13,7 @@ class JokesController < ApplicationController
 
   def create
   	joke = params['joke']
-  	Joke.create(author: joke['author'], body: joke['joke'])
+  	Joke.create(author: joke['author'], body: joke['body'])
   	redirect_to('/jokes')
   end
 
@@ -23,8 +23,8 @@ class JokesController < ApplicationController
   def update
   	joke = params['joke']
   	joke_to_edit = Joke.find(params[:id])
-  	joke_to_edit_update(author: joke['joke'], body: joke['joke'])
-  	redirect_to ('/jokes/#{quote_to_edit_update}')
+  	joke_to_edit.update(author: joke['author'], body: joke['body'])
+  	redirect_to ('/jokes/#{joke_to_edit_update}')
   end
 
   def destroy

@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'jokes/index'
+  # get 'jokes/index'
 
-  get 'jokes/show'
+  # get 'jokes/show'
 
-  get 'jokes/create'
+  # get 'jokes/create'
 
-  get 'jokes/edit'
+  # get 'jokes/edit'
 
-  get 'jokes/update'
+  # get 'jokes/update'
 
-  get 'jokes/destroy'
+  # get 'jokes/destroy'
 
-  get 'home/index'
+  # get 'home/index'
 
   get '/jokes/random', to: 'jokes#get_rand'
   resources :jokes
