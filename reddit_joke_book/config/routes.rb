@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # get 'jokes/destroy'
 
-  # get 'home/index'
+  get 'home/index'
 
   get '/jokes/random', to: 'jokes#get_rand'
   resources :jokes

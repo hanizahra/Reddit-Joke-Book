@@ -2,6 +2,8 @@
 
 <%= render 'myheader' %>
 
+<%= link_to 'Get me a joke!', :controller => :jokes, :action => :get_rand %> <br><br>
+
 <% @jokes.each do |joke| %>
   <span>
     <%= joke['author'] %> - 
@@ -22,5 +24,3 @@
 <% end %>
 
 <br><br>
-
-<%= link_to 'Get a random knock knock joke', :controller => :jokes, :action => :get_rand %>
