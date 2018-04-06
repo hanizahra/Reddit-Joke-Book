@@ -70,9 +70,12 @@
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="/jokes" class="navbar-brand d-flex align-items-center">
-            
             <strong>JokeBook</strong>
           </a>
+          <!-- <a href="/jokes" class="navbar-brand d-flex align-items-left">
+            <strong>New Joke</strong>
+          </a> -->
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,12 +87,12 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Knock Knock Jokes</h1>
+          <h1 class="jumbotron-heading">JokeBook</h1>
           <%= yield %>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <p class="lead text-muted"></p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
           </p>
         </div>
       </section>
@@ -101,8 +104,7 @@
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <p>JokeBook &copy; If you enjoyed this, check out my <a href="https://github.com/hanizahra">GitHub </a>page for more projects!</p>
       </div>
     </footer>
 
@@ -116,94 +118,14 @@
 
 
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-  	<% if notice %>
-		    <p class="alert alert-success"><%= notice %></p>
-		<% end %>
-
-		<% if alert %>
-		    <p class="alert alert-danger"><%= alert %></p>
-	<% end %>
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/jokes">JokeBook</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href=""/jokes/random"">New</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#A1">Write a Joke</a></li>
-            <li class="divider"></li>
-          </ul>
-        </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-      		<% if user_signed_in? %>
-			<li>Logged in as <strong><%= current_user.email %></strong></li>
-        
-        	<li class="dropdown">
-          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span></a>
-          	<ul class="dropdown-menu" role="menu">
-            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-        	<% else %>
-            <li class="divider"></li>
-            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-            <li class="divider"></li>
-            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-    <%= yield %>
-  </div><!-- /.container-fluid -->
-</nav>
 
 
 
 
 
 
-  	<div id="main-container" class="container-fluid">
-	  	<% if notice %>
-		    <p class="alert alert-success"><%= notice %></p>
-		<% end %>
 
-		<% if alert %>
-		    <p class="alert alert-danger"><%= alert %></p>
-		<% end %>
-
-		<p class="navbar-text pull-right">
-			<% if user_signed_in? %>
-			    Logged in as <strong><%= current_user.email %></strong>.
-			    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-			    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-			    <% else %>
-			      	<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-			      	<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-		    <% end %>
-	    </p>
-
-	    <ul class="nav pull-left">
-		  <li class="active"><a href="/jokes">JokeBook</a></li>
-		  <li class="active"><a href="/jokes/random">New</a></li>
-		</ul>
-
-	    <%= yield %>
-	</div>
+  	
 
 
 
