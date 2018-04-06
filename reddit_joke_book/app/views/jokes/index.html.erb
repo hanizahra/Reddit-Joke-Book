@@ -1,6 +1,5 @@
-<h1>Jokes#index</h1>
-
-<%= render 'myheader' %>
+<br><br><br><br>
+<h1>Knock Knock Jokes</h1>
 
 <%= link_to 'Get me a joke!', :controller => :jokes, :action => :get_rand %> <br><br>
 
@@ -15,6 +14,7 @@
   <hr>
 <% end %>
 
+<h4 id="A1">Write Your Own!</h4>
 <%= form_for :joke, method: 'post', url: {action: 'create'} do |f| %>
   <%= label(:joke,:author) %>
   <%= f.text_field :author %><br>

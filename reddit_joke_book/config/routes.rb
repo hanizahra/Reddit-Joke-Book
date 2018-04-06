@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'jokes#index'
+  root to: 'jokes#get_rand'
 
   # get 'jokes/index'
 
